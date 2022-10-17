@@ -6,8 +6,15 @@ import Image from "next/image";
 import purchaseStyles from "./PurchaseCard.module.css";
 import hoverImage from "../../public/footer-image1.png";
 import Link from "next/link";
+import Aos from "aos";
 
 const PurchaseCard = ({ purchaseCardData }) => {
+  React.useEffect(() => {
+    Aos.init({
+      duration: 1400,
+      easing: "ease-in-out-quart",
+    });
+  }, []);
   return (
     <section
       style={{
@@ -21,6 +28,9 @@ const PurchaseCard = ({ purchaseCardData }) => {
           <Card
             className={`${purchaseStyles.gradientBackground}  container-lg px-5 py-5 overflow-hidden border-0`}
             key={data?.id}
+            // data-aos="fade-down-left"
+            data-aos="flip-up"
+            // data-aos-duration="1000"
           >
             <div className="position-relative ">
               <div className="overflow-hidden">

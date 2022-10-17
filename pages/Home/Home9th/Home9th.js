@@ -10,7 +10,7 @@ const Home9th = ({ home9thData }) => {
   useEffect(() => {
     AOS.init({
       duration: 2000,
-      easing: "ease-out-cubic",
+      easing: "ease-in-out-quart",
     });
   }, []);
 
@@ -26,13 +26,13 @@ const Home9th = ({ home9thData }) => {
         className=" container"
         style={{
           fontFamily: "Poppins",
-          display: home9thData?.isShow ? "block" : "none",
         }}
       >
         <div>
           <h1
             className="fs-2 text-center fw-bold  m-auto"
             style={{ width: "80%" }}
+            data-aos="zoom-out"
           >
             {home9thData?.title}
           </h1>
@@ -41,7 +41,10 @@ const Home9th = ({ home9thData }) => {
               <Col xs={12} md={5}>
                 {home9thData?.items?.map((data, index) => (
                   <div key={data.id}>
-                    <Col className=" shadow-lg rounded-3 me-md-5 ">
+                    <Col
+                      className=" shadow-lg rounded-3 me-md-5 "
+                      data-aos="zoom-in-up"
+                    >
                       <FontAwesomeIcon
                         className="text-center pt-3 ps-3"
                         icon={faCheckCircle}
@@ -55,6 +58,7 @@ const Home9th = ({ home9thData }) => {
                       style={{
                         backgroundColor: "#1D2333",
                       }}
+                      data-aos="zoom-in-up"
                     >
                       <FontAwesomeIcon
                         className="text-center pt-3 ps-3"
@@ -64,7 +68,10 @@ const Home9th = ({ home9thData }) => {
                       />
                       <p className=" fs-6 p-3 text-white ">{data?.subTitle2}</p>{" "}
                     </Col>
-                    <Col className="bg-light shadow-lg rounded-3 me-md-5">
+                    <Col
+                      className=" shadow-lg rounded-3 me-md-5"
+                      data-aos="zoom-in-up"
+                    >
                       <FontAwesomeIcon
                         className="text-center pt-3 ps-3"
                         icon={faCheckCircle}
@@ -76,13 +83,14 @@ const Home9th = ({ home9thData }) => {
                   </div>
                 ))}
               </Col>
-              <Col xs={12} md={7} className="">
-                <Home9thSlider home9thData={home9thData} />
+              <Col xs={12} md={7}>
+                <Home9thSlider sliderData={home9thData?.pics} />
               </Col>
             </Row>
           </div>
         </div>
       </div>
+      <div></div>
     </section>
   );
 };

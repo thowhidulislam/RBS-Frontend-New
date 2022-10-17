@@ -11,7 +11,7 @@ import React from "react";
 const Banner = ({ bannerData, bannerImagesData }) => {
   React.useEffect(() => {
     Aos.init({
-      duration: 1500,
+      duration: 1000,
       easing: "ease-in-out-quart",
     });
   }, []);
@@ -79,6 +79,8 @@ const Banner = ({ bannerData, bannerImagesData }) => {
                         className="fw-bold "
                         style={{ fontSize: "45px" }}
                         data-aos="fade-down"
+                        // data-aos="fade-right"
+                        data-aos-offset="300"
                       >
                         {item?.title}
                       </h1>

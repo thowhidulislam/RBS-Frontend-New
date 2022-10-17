@@ -6,6 +6,7 @@ import SwiperCore, { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
+import Aos from "aos";
 
 const Home2nd = ({ home2ndData }) => {
   const [isSSR, setIsSSR] = React.useState(true);
@@ -13,6 +14,13 @@ const Home2nd = ({ home2ndData }) => {
 
   useEffect(() => {
     setIsSSR(false);
+  }, []);
+
+  useEffect(() => {
+    Aos.init({
+      duration: 2000,
+      easing: "ease-in-out-quart",
+    });
   }, []);
 
   return (
@@ -38,7 +46,7 @@ const Home2nd = ({ home2ndData }) => {
           className={`${style.description}`}
         >
           {home2ndData?.titleData?.titleItems?.map((data) => (
-            <div key={data.id}>
+            <div key={data.id} data-aos="zoom-out-right">
               <h1 className="fs-2 text-center fw-bold ">{data.title} </h1>
               <p className="text-center fs-6 mb-5">{data.titleDescription} </p>
             </div>
@@ -46,7 +54,7 @@ const Home2nd = ({ home2ndData }) => {
         </div>
         <div className="row row-cols-2 row-cols-md-5 g-4 justify-content-center text-center">
           {home2ndData?.cardItem?.items.map((card) => (
-            <div key={card.id} className="">
+            <div key={card.id} data-aos="zoom-out-right">
               <Card
                 className=" card shadow-lg rounded"
                 style={{
