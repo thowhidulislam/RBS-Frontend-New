@@ -1,9 +1,16 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import Aos from "aos";
 
 const Home3rd = ({ home3rdData }) => {
-  console.log(home3rdData);
+  React.useEffect(() => {
+    Aos.init({
+      duration: 1500,
+      easing: "ease-in-out-quart",
+    });
+  }, []);
   return (
     <div
       style={{
@@ -14,7 +21,7 @@ const Home3rd = ({ home3rdData }) => {
       }}
     >
       <div className="d-flex flex-column flex-lg-row align-items-center container-lg">
-        <div className="p-3 w-50">
+        <div className="p-3 w-50" data-aos="zoom-in-down">
           {home3rdData?.items?.map((data, index) => (
             <div
               key={data?.id}
@@ -75,7 +82,7 @@ const Home3rd = ({ home3rdData }) => {
             </div>
           ))}
         </div>
-        <div className="p-3 w-50">
+        <div className="p-3 w-50" data-aos="zoom-in-down">
           {home3rdData?.items?.map((data, index) => (
             <Image
               key={data?.id}

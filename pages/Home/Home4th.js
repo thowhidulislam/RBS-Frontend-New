@@ -14,7 +14,12 @@ const Home4th = ({ home4thData }) => {
       }}
     >
       <div className="d-flex flex-column flex-lg-row align-items-center container-lg">
-        <div className="p-3 w-50">
+        <div
+          className="p-3 w-50"
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
           {home4thData?.items?.map((data, index) => (
             <Image
               key={data?.id}
@@ -28,7 +33,12 @@ const Home4th = ({ home4thData }) => {
             />
           ))}
         </div>
-        <div className="p-3 w-50">
+        <div
+          className="p-3 w-50"
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
           {home4thData?.items?.map((data, index) => (
             <div
               key={data?.id}

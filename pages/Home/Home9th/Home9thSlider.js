@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import { Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Home9thSlider = ({ home9thData }) => {
   console.log(home9thData);
@@ -12,7 +12,7 @@ const Home9thSlider = ({ home9thData }) => {
     <div className="w-100 rounded-5 overflow-hidden">
       <Swiper
         autoplay={{
-          delay: 2500,
+          delay: 200,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}

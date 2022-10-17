@@ -23,9 +23,6 @@ const NavBar = () => {
             <Link href="/" passHref>
               <Nav.Link className="text-dark">Home</Nav.Link>
             </Link>
-            <Link href="/products" passHref>
-              <Nav.Link className="text-dark">Products</Nav.Link>
-            </Link>
             <Link href="/pricing" passHref>
               <Nav.Link className="text-dark">Pricing</Nav.Link>
             </Link>
