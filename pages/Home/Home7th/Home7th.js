@@ -1,10 +1,5 @@
-import Image from "next/image";
 import { Card } from "react-bootstrap";
-import images from "../../../public/image/images.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
-import style from "./Home7th.module.css";
 
 const Home7th = ({ home7thData }) => {
   return (

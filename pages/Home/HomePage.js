@@ -39,7 +39,6 @@ const HomePage = ({
         <Home7th home7thData={home7thData} />
         <Home8th home8thData={home8thData} />
         <Home9th home9thData={home9thData} />
-        {/* <Home10th home10thData={home10thData} /> */}
         <PurchaseCard purchaseCardData={purchaseCardData} />
       </div>
     </div>

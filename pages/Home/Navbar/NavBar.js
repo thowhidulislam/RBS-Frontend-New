@@ -1,7 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import NavStyles from "./Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -24,30 +23,12 @@ const NavBar = () => {
             <Link href="/" passHref>
               <Nav.Link className="text-dark">Home</Nav.Link>
             </Link>
-            {/* <Link href='/'>Home</Link>
-            <Link href='/aboutUs'>About us</Link> */}
-            {/* <Link href="/aboutUs" passHref>
-              <Nav.Link className="text-dark">About us</Nav.Link>
-            </Link> */}
             <Link href="/products" passHref>
               <Nav.Link className="text-dark">Products</Nav.Link>
             </Link>
             <Link href="/pricing" passHref>
               <Nav.Link className="text-dark">Pricing</Nav.Link>
             </Link>
-            {/* <NavDropdown  className={`${NavStyles.navLink}`}  title={
-        <span className="text-dark my-auto">Products</span>
-    } id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown> */}
           </Nav>
           <Nav>
             <Link href="/contactUs" passHref>

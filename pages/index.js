@@ -80,7 +80,6 @@ export default function Home() {
         home9thData={home9thData}
         home10thData={home10thData}
         purchaseCardData={purchaseCardData}
-        // home11thData={home11thData}
       />
     </div>
   );

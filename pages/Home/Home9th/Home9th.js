@@ -1,10 +1,7 @@
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-// import React from 'react';
-import image2 from "../../../public/image2.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Home9thSlider from "./Home9thSlider";
@@ -40,7 +37,6 @@ const Home9th = ({ home9thData }) => {
             {home9thData?.title}
           </h1>
           <div className="my-5 gap-5">
-            {/* <div className='row row-cols-1 row-cols-md-2'> */}
             <Row className="d-flex justify-content-md-between">
               <Col xs={12} md={5}>
                 {home9thData?.items?.map((data, index) => (
