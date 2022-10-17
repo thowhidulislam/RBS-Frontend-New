@@ -17,7 +17,7 @@ const PurchaseCard = ({ purchaseCardData }) => {
       }}
     >
       <div style={{ display: purchaseCardData?.isShow ? "block" : "none" }}>
-        {purchaseCardData?.items.map((data, index) => (
+        {purchaseCardData?.items?.map((data, index) => (
           <Card
             className={`${purchaseStyles.gradientBackground}  container-lg px-5 py-5 overflow-hidden border-0`}
             key={data?.id}

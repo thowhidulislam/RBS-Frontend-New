@@ -31,7 +31,7 @@ const Home7th = ({ home7thData }) => {
           </div>
         ))}
         <div className="row row-cols-2 row-cols-md-4 g-4 justify-content-center text-center">
-          {home7thData?.items.map((data, index) => (
+          {home7thData?.items?.map((data, index) => (
             <div key={data?.id} className="">
               <Card
                 className=" card rounded shadow-lg border-0"

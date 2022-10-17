@@ -1,7 +1,7 @@
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Card, Col, ListGroup, Row } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import pricingStyles from "./Pricing.module.css";
 
 const Pricing = ({ pricingData }) => {
@@ -12,7 +12,7 @@ const Pricing = ({ pricingData }) => {
         display: pricingData?.isShow ? "block" : "none",
         backgroundImage:
           "linear-gradient(90deg, rgb(226, 246, 254) 30%, rgb(249, 236, 248) 100% )",
-        padding: "50px 0",
+        padding: "50px  0",
       }}
     >
       <Card className={`${pricingStyles.priceCard} mx-auto  p-3 border-0`}>
@@ -34,7 +34,6 @@ const Pricing = ({ pricingData }) => {
                       color: data?.status === "active" && "#FFF",
                       display: data?.isShow ? "block" : "none",
                     }}
-                    // #8f5df4
                   >
                     <Card.Body>
                       <h1 className="fs-4 fw-bold py-3">{data?.title}</h1>

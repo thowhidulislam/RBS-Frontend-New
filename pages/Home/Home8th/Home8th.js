@@ -20,7 +20,7 @@ const Home8th = ({ home8thData }) => {
       }}
     >
       <div className="py-5 container">
-        {home8thData?.items.map((data, index) => (
+        {home8thData?.items?.map((data, index) => (
           <div key={index} className="row row-cols-1 row-cols-md-2 ">
             <div className="position-relative mb-lg-0  d-lg-block d-none">
               <div
