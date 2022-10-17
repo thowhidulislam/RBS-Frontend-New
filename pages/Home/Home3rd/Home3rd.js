@@ -1,12 +1,6 @@
 import Image from "next/image";
-import project1 from "../../../public/project1.jpeg";
-// import { CheckIcon } from '@heroicons/react/24/outline';
-// import home3rdStyles from '../../../styles/Home3rd.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import checkImage from "../../../public/check.png";
-import checkIcon from "../../../public/check.png";
-import styles from "./Home3rd.module.css";
 
 const Home3rd = ({ home3rdData }) => {
   console.log(home3rdData);

@@ -6,7 +6,6 @@ import SwiperCore, { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import axios from "axios";
 
 const Home2nd = ({ home2ndData }) => {
   const [isSSR, setIsSSR] = React.useState(true);
@@ -15,10 +14,6 @@ const Home2nd = ({ home2ndData }) => {
   useEffect(() => {
     setIsSSR(false);
   }, []);
-
-  // const home2ndData = axios.get("./api/home2ndapi.js").then((res) => {
-  //   console.log(res.data);
-  // });
 
   return (
     <section

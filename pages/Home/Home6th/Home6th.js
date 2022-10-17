@@ -58,7 +58,7 @@ const Home6th = ({ home6thData }) => {
         </div>
       </div>
       <div>
-        <Slider sliderData={home6thData.slider}></Slider>
+        <Slider sliderData={home6thData?.slider}></Slider>
       </div>
     </div>
   );

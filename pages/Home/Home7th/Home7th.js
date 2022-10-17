@@ -37,8 +37,6 @@ const Home7th = ({ home7thData }) => {
                 className=" card rounded shadow-lg border-0"
                 style={{
                   height: "150px",
-                  // backgroundImage:
-                  //   "linear-gradient(90deg,rgb(250, 235, 235) 0%, rgb(223, 231, 253) 100%);",
                 }}
               >
                 <div className="m-auto">
@@ -53,12 +51,6 @@ const Home7th = ({ home7thData }) => {
                   </div>
                   <div>
                     <h1 className="fs-6 fw-bold p-3 ">{data?.title}</h1>
-                    {/* <Card.Text className="fs-6">{data?.description}</Card.Text> */}
-                    {/* <Link href="/" style={{ textDecoration: "none" }}>
-                  <button className={`${style.btnColor} border-0 btn-color`}>
-                    Read more <FontAwesomeIcon icon={faArrowRight} />{" "}
-                  </button>
-                </Link> */}
                   </div>
                 </div>
               </Card>
