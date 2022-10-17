@@ -1,0 +1,31 @@
+/* .card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 18rem;
+} */
+.description{
+    width: 50%;
+    margin: auto;
+    /* color: rgb(242, 251, 250)
+    color: rgb(252, 248, 249)   */
+}
+
+.btnColor {
+    color: #765DF5;
+    /* background-image: linear-gradient(90deg,rgb(250, 235, 235) 0%, rgb(223, 231, 253) 100%); */
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.link {
+    text-decoration: none;
+}
+
+/* .swiper-container-free-mode > .swiper-wrapper{
+    transition-timing-function : linear;
+  } */
+
+@media (max-width: 600px){
+    .description {
+        width: 100%;
+    }
+}

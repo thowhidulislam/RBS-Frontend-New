@@ -1,0 +1,83 @@
+.icon{
+    color:rgb(244, 146, 8);
+}
+.background{
+    background: rgb(142,112,185);
+background: linear-gradient(90deg, rgba(142,112,185,1) 0%, rgba(103,30,222,0.8300362381280637) 100%);
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 10px; */
+}
+
+.swiperSlide {
+  /* text-align: center;
+  font-size: 18px;
+  background: #fff; */
+
+  /* Center slide text vertically */
+  /* display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center; */
+  align-items: center;
+  text-align: center;
+}
+.quote::before{
+  content: '\201C';
+  font-size:40px;
+  font-family: sans-serif;
+  color: rgb(161, 80, 237);
+  position: relative;
+  top:10px;
+}
+.quote::after{
+  content: '\201D';
+  font-size:40px;
+  font-family: sans-serif;
+  color: rgb(161, 80, 237);
+  position: relative;
+  top:13px;
+}
+.quote{
+  line-height: 20px;
+}
+/* .swiper-slide h1 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+ @media screen and (min-width: 320px) {
+  .swiperSlide h1 {
+  /* display: block;
+margin: 0 auto; */
+  text-align: center;
+}
+}
+ @media screen and (min-width: 640px) {
+  .swiperSlide h1 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+}
+
+@media screen and (min-width: 768px) {
+  .swiperSlide h1 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+} 

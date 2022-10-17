@@ -1,0 +1,7 @@
+.bannerText{
+    position:relative;
+    font-size:8vw;
+    color:#272D54;
+    -webkit-text-stroke: 0.3vw #dbdffa;
+    /* text-transform: uppercase; */
+}

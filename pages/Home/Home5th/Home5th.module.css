@@ -1,0 +1,10 @@
+.headingDescription {
+    width: 50%;
+    margin: auto;
+}
+
+@media (max-width: 600px){
+    .headingDescription {
+        width: 100%;
+    }
+}
