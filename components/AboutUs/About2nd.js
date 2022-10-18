@@ -1,19 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFingerprint,
-  faHand,
-  faHandBackFist,
-  faHandHolding,
-  faHandHoldingDroplet,
-  faHandHoldingMedical,
-  faHandsHoldingCircle,
-  faLightbulb,
-  faMobileScreen,
-  faTabletScreenButton,
-} from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
-import Link from "next/link";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import about2ndStyles from "./About2nd.module.css";
 
 const Home2nd = ({ about2ndData }) => {
@@ -32,7 +18,7 @@ const Home2nd = ({ about2ndData }) => {
           fontFamily: "Poppins",
         }}
       >
-        {about2ndData?.titleData.map((data, index) => (
+        {about2ndData?.titleData?.map((data, index) => (
           <div key={data?.id}>
             <h1
               className="text-center fw-bold my-3"

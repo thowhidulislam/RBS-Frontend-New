@@ -1,12 +1,8 @@
-import {
-  faCertificate,
-  faClipboard,
-  faRightLeft,
-} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card, Col, Row } from "react-bootstrap";
 
 const Policy = ({ policyData }) => {
+  console.log(policyData);
   return (
     <section
       style={{
@@ -17,7 +13,7 @@ const Policy = ({ policyData }) => {
       }}
     >
       <Row className=" mx-auto gx-lg-4 gy-3">
-        {policyData?.items.map((data, index) => (
+        {policyData?.items?.map((data, index) => (
           <Col key={index} sm={1} md={4}>
             <Card
               className="mb-2  shadow-lg border-0 p-3"

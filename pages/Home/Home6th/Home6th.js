@@ -3,8 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import style from "./Home6th.module.css";
 import Slider from "./slider";
+import React from "react";
+import Aos from "aos";
 
 const Home6th = ({ home6thData }) => {
+  React.useEffect(() => {
+    Aos.init({
+      duration: 1400,
+      easing: "ease-in-out-quart",
+    });
+  }, []);
   return (
     <div
       className="mx-auto"
@@ -17,7 +25,10 @@ const Home6th = ({ home6thData }) => {
         backgroundColor: "rgb(30, 35, 52)",
       }}
     >
-      <div className=" container-lg mx-auto text-white row row-cols-1 row-cols-md-3 g-4">
+      <div
+        className=" container-lg mx-auto text-white row row-cols-1 row-cols-md-3 g-4"
+        data-aos="zoom-in"
+      >
         <div className="text-center">
           <h1 style={{ fontSize: "60px" }}>{home6thData?.column1Title}</h1>
           <FontAwesomeIcon className={`${style.icon}`} icon={faStar} />
@@ -57,8 +68,8 @@ const Home6th = ({ home6thData }) => {
           </div>
         </div>
       </div>
-      <div>
-        <Slider sliderData={home6thData.slider}></Slider>
+      <div data-aos="zoom-in-up">
+        <Slider sliderData={home6thData?.slider}></Slider>
       </div>
     </div>
   );

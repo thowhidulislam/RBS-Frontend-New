@@ -1,24 +1,64 @@
 import HomePage from "./Home/HomePage";
 import axios from "axios";
+import React, { useEffect } from "react";
 
-export default function Home({
-  bannerData,
-  bannerImagesData,
-  home2ndData,
-  home3rdData,
-  home4thData,
-  home5thData,
-  home6thData,
-  home7thData,
-  home8thData,
-  home9thData,
-  home10thData,
-  purchaseCardData,
-  // footerData
-}) {
-  // const home2ndData = axios.get("/api/home2ndapi").then((res) => {
-  //   console.log(res.data);
-  // });
+export default function Home() {
+  const [bannerData, setBannerData] = React.useState({});
+  const [bannerImagesData, setBannerImagesData] = React.useState({});
+  const [home2ndData, setHome2ndData] = React.useState({});
+  const [home3rdData, setHome3rdData] = React.useState({});
+  const [home4thData, setHome4thData] = React.useState({});
+  const [home5thData, setHome5thData] = React.useState({});
+  const [home6thData, setHome6thData] = React.useState({});
+  const [home7thData, setHome7thData] = React.useState({});
+  const [home8thData, setHome8thData] = React.useState({});
+  const [home9thData, setHome9thData] = React.useState({});
+  const [home10thData, setHome10thData] = React.useState({});
+  const [purchaseCardData, setPurchaseCardData] = React.useState({});
+
+  useEffect(() => {
+    axios.get("/api/banner").then((res) => {
+      setBannerData(res.data);
+    });
+    axios.get("/api/bannerImage").then((res) => {
+      setBannerImagesData(res.data);
+    });
+    axios.get("/api/home2ndapi").then((res) => {
+      setHome2ndData(res.data);
+    });
+    axios.get("/api/home3rdapi").then((res) => {
+      setHome3rdData(res.data);
+    });
+    axios.get("/api/home4thapi").then((res) => {
+      setHome4thData(res.data);
+    });
+    axios.get("/api/home5thapi").then((res) => {
+      setHome5thData(res.data);
+    });
+    axios.get("/api/home6thapi").then((res) => {
+      setHome6thData(res.data);
+    });
+    axios.get("/api/home7thapi").then((res) => {
+      setHome7thData(res);
+      console.log(res.data);
+    });
+    axios.get("/api/home8thapi").then((res) => {
+      setHome8thData(res.data);
+    });
+    axios.get("/api/home9thapi").then((res) => {
+      setHome9thData(res.data);
+    });
+    axios.get("/api/home10thapi").then((res) => {
+      setHome10thData(res.data);
+    });
+    axios.get("/api/home10thapi").then((res) => {
+      setHome10thData(res.data);
+    });
+    axios.get("api/purchaseCard").then((res) => {
+      setPurchaseCardData(res.data);
+    });
+  }, []);
+
   return (
     <div
       style={{
@@ -40,48 +80,7 @@ export default function Home({
         home9thData={home9thData}
         home10thData={home10thData}
         purchaseCardData={purchaseCardData}
-        // home11thData={home11thData}
       />
-      <div></div>
     </div>
   );
-}
-
-export async function getServerSideProps() {
-  // await axios.get("../public/JSON/banner.json");
-  const response = await axios.get("http://localhost:3000/api/banner");
-  const bannerImages = await axios.get("http://localhost:3000/api/bannerImage");
-  const home2ndData = await axios.get("http://localhost:3000/api/home2ndapi");
-  const home3rdInfos = await axios.get("http://localhost:3000/api/home3rdapi");
-  const home4thData = await axios.get("http://localhost:3000/api/home4thapi");
-  const home5thInfos = await axios.get("http://localhost:3000/api/home5thapi");
-  const home6thData = await axios.get("http://localhost:3000/api/home6thapi");
-  const home7thInfos = await axios.get("http://localhost:3000/api/home7thapi");
-  const home8thData = await axios.get("http://localhost:3000/api/home8thapi");
-  const home9thData = await axios.get("http://localhost:3000/api/home9thapi");
-  const home10thData = await axios.get("http://localhost:3000/api/home10thapi");
-  const purchaseCardInfos = await axios.get(
-    "http://localhost:3000/api/purchaseCard"
-  );
-  // const home2ndData = axios.get("api/home2ndapi").then((res) => {
-  //   console.log(res.data);
-  // });
-
-  return {
-    props: {
-      bannerData: response.data,
-      bannerImagesData: bannerImages.data,
-      home2ndData: home2ndData.data,
-      home3rdData: home3rdInfos.data,
-      home5thData: home5thInfos.data,
-      home7thData: home7thInfos.data,
-      home4thData: home4thData.data,
-      home8thData: home8thData.data,
-      home9thData: home9thData.data,
-      home6thData: home6thData.data,
-      home10thData: home10thData.data,
-      purchaseCardData: purchaseCardInfos.data,
-      //  footerData: footerInfos.data
-    },
-  };
 }

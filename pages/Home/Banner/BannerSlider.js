@@ -27,7 +27,6 @@ export default function Slider({ bannerImagesData }) {
                 disableOnInteraction: false,
               }}
               modules={[Autoplay]}
-              // className="mySwiper"
             >
               {bannerImagesData?.images?.map((image, index) => (
                 <>

@@ -1,10 +1,5 @@
-import Image from "next/image";
 import { Card } from "react-bootstrap";
-import images from "../../../public/image/images.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
-import style from "./Home7th.module.css";
 
 const Home7th = ({ home7thData }) => {
   return (
@@ -31,14 +26,12 @@ const Home7th = ({ home7thData }) => {
           </div>
         ))}
         <div className="row row-cols-2 row-cols-md-4 g-4 justify-content-center text-center">
-          {home7thData?.items.map((data, index) => (
+          {home7thData?.items?.map((data, index) => (
             <div key={data?.id} className="">
               <Card
                 className=" card rounded shadow-lg border-0"
                 style={{
                   height: "150px",
-                  // backgroundImage:
-                  //   "linear-gradient(90deg,rgb(250, 235, 235) 0%, rgb(223, 231, 253) 100%);",
                 }}
               >
                 <div className="m-auto">
@@ -53,12 +46,6 @@ const Home7th = ({ home7thData }) => {
                   </div>
                   <div>
                     <h1 className="fs-6 fw-bold p-3 ">{data?.title}</h1>
-                    {/* <Card.Text className="fs-6">{data?.description}</Card.Text> */}
-                    {/* <Link href="/" style={{ textDecoration: "none" }}>
-                  <button className={`${style.btnColor} border-0 btn-color`}>
-                    Read more <FontAwesomeIcon icon={faArrowRight} />{" "}
-                  </button>
-                </Link> */}
                   </div>
                 </div>
               </Card>

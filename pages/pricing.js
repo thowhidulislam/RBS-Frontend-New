@@ -1,27 +1,29 @@
 import axios from "axios";
-import Policy from "../components/Pricing/Policy/Policy";
-import Pricing from "../components/Pricing/Pricing"
+import React from "react";
 import PricingBanner from "../components/Pricing/PricingBanner";
+import Pricing from "../components/Pricing/Pricing";
+import Policy from "../components/Pricing/Policy/Policy";
 
-const pricing = ({pricingData,policyData }) => {
-    return (
-        <>
-            <PricingBanner/>
-            <Pricing pricingData={pricingData}/>
-            <Policy policyData={policyData}/>
-        </>
-    );
+const PricingMain = () => {
+  const [pricingData, setPricingData] = React.useState({});
+  const [policyData, setPolicyData] = React.useState({});
+
+  React.useEffect(() => {
+    axios.get("/api/pricing/pricingapi").then((res) => {
+      setPricingData(res.data);
+    });
+    axios.get("/api/pricing/policyapi").then((res) => {
+      setPolicyData(res.data);
+    });
+  }, []);
+
+  return (
+    <>
+      <PricingBanner />
+      <Pricing pricingData={pricingData} />
+      <Policy policyData={policyData} />
+    </>
+  );
 };
 
-export default pricing;
-
-export async function getServerSideProps(){
-    const pricingInfos= await axios.get('http://localhost:3000/api/pricing/pricingapi')
-    const policyInfos= await axios.get('http://localhost:3000/api/pricing/policyapi')
-    return {
-        props:{
-            pricingData: pricingInfos.data,
-            policyData: policyInfos.data,
-        }
-    }
-}
+export default PricingMain;

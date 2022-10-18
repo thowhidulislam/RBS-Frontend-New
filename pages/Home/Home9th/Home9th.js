@@ -1,10 +1,7 @@
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-// import React from 'react';
-import image2 from "../../../public/image2.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Home9thSlider from "./Home9thSlider";
@@ -13,7 +10,7 @@ const Home9th = ({ home9thData }) => {
   useEffect(() => {
     AOS.init({
       duration: 2000,
-      easing: "ease-out-cubic",
+      easing: "ease-in-out-quart",
     });
   }, []);
 
@@ -29,23 +26,25 @@ const Home9th = ({ home9thData }) => {
         className=" container"
         style={{
           fontFamily: "Poppins",
-          display: home9thData?.isShow ? "block" : "none",
         }}
       >
         <div>
           <h1
             className="fs-2 text-center fw-bold  m-auto"
             style={{ width: "80%" }}
+            data-aos="zoom-out"
           >
             {home9thData?.title}
           </h1>
           <div className="my-5 gap-5">
-            {/* <div className='row row-cols-1 row-cols-md-2'> */}
             <Row className="d-flex justify-content-md-between">
               <Col xs={12} md={5}>
                 {home9thData?.items?.map((data, index) => (
                   <div key={data.id}>
-                    <Col className=" shadow-lg rounded-3 me-md-5 ">
+                    <Col
+                      className=" shadow-lg rounded-3 me-md-5 "
+                      data-aos="zoom-in-up"
+                    >
                       <FontAwesomeIcon
                         className="text-center pt-3 ps-3"
                         icon={faCheckCircle}
@@ -59,6 +58,7 @@ const Home9th = ({ home9thData }) => {
                       style={{
                         backgroundColor: "#1D2333",
                       }}
+                      data-aos="zoom-in-up"
                     >
                       <FontAwesomeIcon
                         className="text-center pt-3 ps-3"
@@ -68,7 +68,10 @@ const Home9th = ({ home9thData }) => {
                       />
                       <p className=" fs-6 p-3 text-white ">{data?.subTitle2}</p>{" "}
                     </Col>
-                    <Col className="bg-light shadow-lg rounded-3 me-md-5">
+                    <Col
+                      className=" shadow-lg rounded-3 me-md-5"
+                      data-aos="zoom-in-up"
+                    >
                       <FontAwesomeIcon
                         className="text-center pt-3 ps-3"
                         icon={faCheckCircle}
@@ -80,13 +83,14 @@ const Home9th = ({ home9thData }) => {
                   </div>
                 ))}
               </Col>
-              <Col xs={12} md={7} className="">
-                <Home9thSlider home9thData={home9thData} />
+              <Col xs={12} md={7}>
+                <Home9thSlider sliderData={home9thData?.pics} />
               </Col>
             </Row>
           </div>
         </div>
       </div>
+      <div></div>
     </section>
   );
 };

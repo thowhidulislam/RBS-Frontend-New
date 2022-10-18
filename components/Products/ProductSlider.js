@@ -35,7 +35,7 @@ const ProductSlider = ({ productSliderData }) => {
             spaceBetween={30}
             loop={true}
             autoplay={{
-              delay: 4000,
+              delay: 1500,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
               waitForTransition: true,
@@ -64,7 +64,7 @@ const ProductSlider = ({ productSliderData }) => {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {productSliderData?.items.map((data, index) => (
+            {productSliderData?.items?.map((data, index) => (
               <>
                 {data?.isShow && (
                   <SwiperSlide key={data?.id}>

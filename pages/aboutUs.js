@@ -1,11 +1,27 @@
 import React from "react";
 import AboutBanner from "../components/AboutUs/AboutBanner";
 import Team from "../components/AboutUs/Team";
+import axios from "axios";
 import About2nd from "../components/AboutUs/About2nd";
 import About3rd from "../components/AboutUs/About3rd";
-import axios from "axios";
 
-const aboutUs = ({ about2ndData, about3rdData, teamData }) => {
+const AboutUs = () => {
+  const [about2ndData, setAbout2ndData] = React.useState({});
+  const [about3rdData, setAbout3rdData] = React.useState({});
+  const [teamData, setTeamData] = React.useState({});
+
+  React.useEffect(() => {
+    axios.get("/api/aboutus/about2ndapi").then((res) => {
+      setAbout2ndData(res.data);
+    });
+    axios.get("/api/about3rdapi").then((res) => {
+      setAbout3rdData(res.data);
+    });
+    axios.get("/api/teamapi").then((res) => {
+      setTeamData(res.data);
+    });
+  }, []);
+
   return (
     <div
       style={{
@@ -21,20 +37,4 @@ const aboutUs = ({ about2ndData, about3rdData, teamData }) => {
   );
 };
 
-export default aboutUs;
-
-export async function getServerSideProps() {
-  const about2ndInfos = await axios.get(
-    "http://localhost:3000/api/aboutus/about2ndapi"
-  );
-  const about3rdData = await axios.get("http://localhost:3000/api/about3rdapi");
-  const teamData = await axios.get("http://localhost:3000/api/teamapi");
-
-  return {
-    props: {
-      about2ndData: about2ndInfos.data,
-      about3rdData: about3rdData.data,
-      teamData: teamData.data,
-    },
-  };
-}
+export default AboutUs;

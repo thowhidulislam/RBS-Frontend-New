@@ -5,8 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import bannerStyles from "../../../styles/Banner.module.css";
 import { Col, Row } from "react-bootstrap";
+import Aos from "aos";
+import React from "react";
 
 const Banner = ({ bannerData, bannerImagesData }) => {
+  React.useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out-quart",
+    });
+  }, []);
+
   //get banner detail api
   const marqueeTextDemo = [
     {
@@ -66,17 +75,23 @@ const Banner = ({ bannerData, bannerImagesData }) => {
                       key={item?.id}
                       style={{ display: item?.isShow ? "block" : "none" }}
                     >
-                      <h1 className="fw-bold " style={{ fontSize: "45px" }}>
+                      <h1
+                        className="fw-bold "
+                        style={{ fontSize: "45px" }}
+                        data-aos="fade-down"
+                        // data-aos="fade-right"
+                        data-aos-offset="300"
+                      >
                         {item?.title}
                       </h1>
                       <div style={{ fontSize: "18px" }}>
-                        <p className=" ">
+                        <p className=" " data-aos="fade-left">
                           <small>{item?.primaryDescription}</small>
                         </p>
-                        <p className="">
+                        <p className="" data-aos="fade-right">
                           <small>{item?.secondaryDescription}</small>
                         </p>
-                        <p className="">
+                        <p className="" data-aos="fade-up">
                           <small>{item?.tertiaryDescription}</small>
                         </p>
                       </div>
@@ -94,6 +109,7 @@ const Banner = ({ bannerData, bannerImagesData }) => {
                   height={500}
                   alt="project manager"
                   layout="responsive"
+                  data-aos="fade-up-left"
                 />
               ))}
             </Col>

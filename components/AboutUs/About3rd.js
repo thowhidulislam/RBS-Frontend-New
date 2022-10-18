@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const About3rd = ({ about3rdData }) => {
+  console.log(about3rdData);
   return (
     <div
       style={{

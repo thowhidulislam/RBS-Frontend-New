@@ -39,7 +39,7 @@ export const home9thDemoData = {
       img: "/todoBoard5.png",
     },
     {
-      id: 5,
+      id: 6,
       img: "/todoBoard6.png",
     },
   ],
